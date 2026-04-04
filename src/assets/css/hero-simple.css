@@ -1,0 +1,352 @@
+/* Simplified Hero Visual Styles */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-mockup {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 0;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.mockup-header {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mockup-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.mockup-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mockup-dots span:nth-child(1) {
+  background: #ff5f56;
+}
+.mockup-dots span:nth-child(2) {
+  background: #ffbd2e;
+}
+.mockup-dots span:nth-child(3) {
+  background: #27c93f;
+}
+
+.mockup-content {
+  padding: 48px 32px;
+}
+
+.savings-card {
+  text-align: center;
+}
+
+.card-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.savings-amount {
+  font-size: 56px;
+  font-weight: 800;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 32px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--grad-primary);
+  border-radius: 100px;
+  transition: width 1s ease;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .hero-mockup {
+    max-width: 100%;
+  }
+
+  .savings-amount {
+    font-size: 42px;
+  }
+}
+
+/* Floating Cards Container (Logged Out State) */
+.floating-cards-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.float-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Balance Card - Main Card - Standard Layout */
+.balance-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 48px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: none;
+}
+
+.balance-card::before {
+  display: none;
+}
+
+.balance-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+.card-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.user-avatar-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--accent-teal) 0%,
+    var(--accent-blue) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-navy);
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.balance-card .card-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.balance-amount {
+  font-size: 52px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 32px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-family: var(--font-heading);
+}
+
+.balance-amount .decimal {
+  font-size: 32px;
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+.sparkline-mini {
+  width: 100%;
+  height: 44px;
+  color: var(--accent-teal);
+  opacity: 0.7;
+  filter: none;
+}
+
+.sparkline-mini path {
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Goal Card - Hidden in Standard Layout */
+.goal-card {
+  display: none;
+}
+
+@keyframes float-goal-refined {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.goal-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 12px 24px rgba(0, 0, 0, 0.08),
+    0 24px 48px rgba(0, 0, 0, 0.12);
+}
+
+.goal-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.goal-emoji {
+  font-size: 24px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.goal-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: -0.02em;
+}
+
+.goal-progress {
+  font-size: 15px;
+  color: var(--accent-teal);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-shadow: 0 0 20px rgba(20, 241, 149, 0.3);
+}
+
+/* Streak Card - Hidden in Standard Layout */
+.streak-card {
+  display: none;
+}
+
+.streak-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ff6b00;
+  margin-bottom: 12px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-family: var(--font-heading);
+  text-shadow: 0 0 30px rgba(255, 107, 0, 0.3);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.streak-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+/* Subtle Parallax on Mouse Move */
+@media (hover: hover) {
+  .floating-cards-container {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-cards-container {
+    height: auto;
+    max-width: 100%;
+    perspective: none;
+  }
+
+  .balance-card {
+    width: calc(100% - 32px);
+    padding: 36px;
+    transform: none;
+  }
+
+  .balance-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .goal-card {
+    display: none;
+  }
+
+  .streak-card {
+    display: none;
+  }
+
+  .balance-amount {
+    font-size: 44px;
+  }
+
+  .balance-amount .decimal {
+    font-size: 28px;
+  }
+
+  .streak-number {
+    font-size: 42px;
+  }
+}
